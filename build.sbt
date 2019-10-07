@@ -24,7 +24,7 @@ lazy val root = (project in file(".")).
     libraryDependencies ++= Seq(
       "org.apache.spark" %% "spark-streaming" % "2.3.0" % "provided",
       "org.apache.spark" %% "spark-sql" % "2.3.0" % "provided",
-
+      "org.json4s" %% "json4s-jackson" % "3.6.7", //enable json4s
       "org.scalatest" %% "scalatest" % "3.0.1" % "test",
       "org.scalacheck" %% "scalacheck" % "1.13.4" % "test",
       "com.holdenkarau" %% "spark-testing-base" % "2.3.0_0.9.0" % "test" 
