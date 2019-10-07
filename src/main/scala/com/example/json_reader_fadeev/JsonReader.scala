@@ -2,8 +2,8 @@ package com.example.json_reader_fadeev
 
 import org.apache.spark.rdd.RDD
 import org.apache.spark.sql.SparkSession
-import org.json4s_
-
+//import org.json4s.
+//import org.json4s.jackson.JsonMethods.
 
 object JsonReader extends App {
   val spark: SparkSession = SparkSession
