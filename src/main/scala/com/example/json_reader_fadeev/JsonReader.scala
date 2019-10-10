@@ -10,10 +10,10 @@ object JsonReader extends App {
     .appName(name = "DZ")
     .master(master = "local[*]")
     .getOrCreate()
-  //val sc = spark.sparkContext
+  val sc = spark.sparkContext
   //  val json = spark.read.json("/home/fadeev/Desktop/winemag-data-130k-v2.json")
-  //  val lines = sc.textFile("/home/fadeev/Desktop/winemag-data-130k-v2.json")
-  //  val lines = sc.spark.read.
+  val lines = sc.textFile("/home/fadeev/Desktop/winemag-data-130k-v2.json")
+  //val lines = sc.spark.read.
   val colors = Map("red" -> "#FF0000", "azure" -> "#F0FFFF", " " -> "#FFFFFF")
   println( "Keys in colors : " + colors.keys )
   println( "Values in colors : " + colors.values )
