@@ -25,6 +25,7 @@ lazy val root = (project in file(".")).
       "org.apache.spark" %% "spark-streaming" % "2.3.0" % "provided",
       "org.apache.spark" %% "spark-sql" % "2.3.0" % "provided",
       "org.json4s" %% "json4s-jackson" % "3.6.7", //enable json4s
+      "org.json4s" %% "json4s-native" % "3.6.7",
       "org.scala-lang.modules" %% "scala-xml" % "1.2.0",
       "com.fasterxml.jackson.module" % "jackson-module-scala_2.11" % "2.10.0",
       "com.fasterxml.jackson.core" % "jackson-core" % "2.10.0",
