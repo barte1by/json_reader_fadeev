@@ -20,29 +20,44 @@ object JsonReader extends App {
 
   implicit val formats = DefaultFormats
 
+  val filename = "/home/fadeev/Desktop/winemag-data-130k-v2.json"
   case class Users(
-                    id: Option[Int],
+                    id: Option[String],
                     country: Option[String],
-                    points: Option[Int],
-                    price: Option[Int],
+                    points: Option[String],
+                    price: Option[String],
                     title: Option[String],
                     variety: Option[String],
                     winery: Option[String])
 
-  for (line <- Source.fromFile("/home/fadeev/Desktop/winemag-data-130k-v2.json").getLines) {
-    val Users = jsonStrToMap(line)
-    println(Users)
-  }
+  val lines = sc.textFile(filename)
+
+  println(lines)
+
+    for (line <- Source.fromFile(filename).getLines) {
+      val datas = jsonStrToMap(line)
+      //println(datas)
+    }
 
   def jsonStrToMap(jsonStr: String): Users = {
     parse(jsonStr).camelizeKeys.extract[Users]
   }
 
-//  val decodedUser = parse(FILE).extract[Users]
+  def readFile(filename: String): Seq[String] = {
+    val bufferedSource = scala.io.Source.fromFile(filename)
+    val lines = (for (line <- bufferedSource.getLines()) yield line).toSeq
+    bufferedSource.close
+    lines
+  }
 
-  val firstRDD: RDD[String] = sc.parallelize(List(Users: Users) )
-  println(firstRDD)
 
+//  val decodedUser = parse(datata)
+
+ val RDD = sc.parallelize(lines : Seq[])
+ println(RDD)
+
+
+  for ( a <- 1 to 10) {   println( "Value of a: " + a )}
 
   /*  val json = spark.read.json("/home/fadeev/Desktop/winemag-data-130k-v2.json")
   json.show()
@@ -52,13 +67,13 @@ object JsonReader extends App {
   println( "Keys in colors : " + colors.keys )
   println( "Values in colors : " + colors.values )
   println( "Check if colors is empty : " + colors.isEmpty )
-*/
+
   val t = (4,3,2,1)
   val sum = (t._1 + t._1 ) * t._3 + t._1
   println(sum)
 
   // Primer
-/*  val data = Array(1, 2, 3, 4, 5)
+  val data = Array(1, 2, 3, 4, 5)
   val firstRDD: RDD[Int] = sc.parallelize(data)
   val result = firstRDD
     .map( x => x+1)
@@ -68,7 +83,7 @@ object JsonReader extends App {
     println {
       result.toList
    }
- */
+*/
 }
 
 
