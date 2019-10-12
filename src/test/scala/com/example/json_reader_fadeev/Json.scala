@@ -1,8 +1,9 @@
 package com.example.json_reader_fadeev
 
 import org.json4s._
-import scala.io.Source
 import org.json4s.jackson.JsonMethods._
+
+import scala.io.Source
 
 object Json extends App {
 
