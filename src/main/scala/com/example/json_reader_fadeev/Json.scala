@@ -6,8 +6,8 @@ import org.json4s.jackson.JsonMethods._
 
 object Json extends App {
 
-  val filename = "D:\\Dropbox\\obrozavanie\\OTUS\\5\\winemag-data-130k-v2.json" //Windows
-  //  val filename = "/home/fadeev/Desktop/winemag-data-133k-v2.json"  //Linux
+
+    val filename = "/home/fadeev/Desktop/winemag-data-130k-v2.json"  //Linux
 
   implicit val formats = DefaultFormats
 

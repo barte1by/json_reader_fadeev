@@ -7,7 +7,7 @@ import org.json4s.jackson.JsonMethods.parse
 import org.json4s.jackson.Serialization
 
 
-object JsonReader extends App {
+object JsonReaderFadeev extends App {
 
   val spark: SparkSession = SparkSession
     .builder()

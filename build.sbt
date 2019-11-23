@@ -24,7 +24,10 @@ lazy val root = (project in file(".")).
     libraryDependencies ++= Seq(
       "org.apache.spark" %% "spark-streaming" % "2.3.0" % "provided",
       "org.apache.spark" %% "spark-sql" % "2.3.0" % "provided",
+      //"org.apache.spark" %% "spark-core" % "2.3.0" % "provided",
       "org.json4s" %% "json4s-jackson" % "3.6.7", //enable json4s
+      //"org.apache.spark"  %% "spark-core" % "2.3.0" % "provided",
+      "org.scalatest" %% "scalatest" % "3.0.5" % "test",
       "org.json4s" %% "json4s-native" % "3.6.7",
       "org.scala-lang.modules" %% "scala-xml" % "1.2.0",
       "com.fasterxml.jackson.module" % "jackson-module-scala_2.11" % "2.10.0",
@@ -34,7 +37,19 @@ lazy val root = (project in file(".")).
       "org.scalacheck" %% "scalacheck" % "1.13.4" % "test",
       "com.holdenkarau" %% "spark-testing-base" % "2.3.0_0.9.0" % "test" 
     ),
+/*
+    libraryDependencies ++= Seq(
+      "org.json4s" %% "json4s-jackson" % "3.2.11",
+      "com.fasterxml.jackson.core" % "jackson-core" % "2.8.1" force(),
 
+      "org.apache.spark" %% "spark-streaming" % "2.3.0" % "provided",
+      "org.apache.spark" %% "spark-sql" % "2.3.0" % "provided",
+
+      "org.scalatest" %% "scalatest" % "3.0.1" % "test",
+      "org.scalacheck" %% "scalacheck" % "1.13.4" % "test",
+      "com.holdenkarau" %% "spark-testing-base" % "2.3.0_0.9.0" % "test"
+    ),
+*/
     // uses compile classpath for the run task, including "provided" jar (cf http://stackoverflow.com/a/21803413/3827)
     run in Compile := Defaults.runTask(fullClasspath in Compile, mainClass in (Compile, run), runner in (Compile, run)).evaluated,
 
